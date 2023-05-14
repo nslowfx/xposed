@@ -37,7 +37,7 @@ class app {
             url: 'https://api.github.com/users/nslowfx/repos?sort=pushed&per_page=9'
         }).done(function (data) {
             $.each(data, function (index, repo) {
-                if (repo.name.includes("nslowfx")) return;
+                if (repo.name.includes("nslowfx") || repo.name.includes("history")) return;
                 $('#cards').append(
                     `
                         <div onclick="_app.openlink('${repo.html_url}')" style="max-height: 180px;" class="card magic-hover magic-hover__square">
